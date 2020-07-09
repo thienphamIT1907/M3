@@ -1,0 +1,68 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 100vw;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+}
+
+.container {
+    margin: 20px auto;
+    width: 50%;
+    height: 700px;
+    border: 1px solid grey;
+}
+
+.left {
+    float: left;
+    width: 45%;
+    height: 700px;
+    background: teal;
+    color: white;
+}
+
+.right {
+    float:right;
+    width: 55%;
+    height: 700px;
+    border: 1px solid black;
+    padding: 30px;
+}
+
+.info {
+    margin-left: 60px;
+}
+
+.info p span {
+    float:right;
+    margin-right: 80px;
+}
+
+.info p {
+    line-height: 30px;
+}
+
+.muc-tieu {
+    padding: 0 25px;
+    text-align: justify;
+}
+
+center {
+    margin-top: 20px;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 25px;
+}
+.sub-right {
+    margin-top: 50px;
+}
+
+.sub-right p{
+    line-height: 35px;
+}
