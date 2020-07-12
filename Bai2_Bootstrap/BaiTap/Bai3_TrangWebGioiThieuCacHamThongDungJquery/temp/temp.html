@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <!-- <script src="app.js"></script> -->
+    <script src="apptemp.js"></script>
+</head>
+
+<body>
+<!--This is our template. -->
+<!--Data will be inserted in its according place, replacing the brackets.-->
+<!-- <script id="address-template" type="text/x-handlebars-template">
+    <p>You can find me in {{city}}. My address is {{number}} {{street}}.</p>
+  </script> -->
+
+<!--Your new content will be displayed in here-->
+<!-- <div class="content-placeholder"></div> -->
+
+<!-- ========= -->
+
+<div id="list-customer"></div>
+<script id="loop-customer" type="text/x-handlebars-template">
+    <ul>
+        {{#each listCustomer}}
+            <li>{{firstName}} {{idCustomer}}</li>
+        {{/each}}
+    </ul>
+
+
+</script>
+</body>
+
+</html>
