@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Offical Home of Microsoft</title>
+    <link rel="stylesheet" href="style.css">
+    <script
+            src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/b2cccbdfee.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+   <div class="container-fluid p-0">
+       <nav class="navbar navbar-expand-sm bg-white navbar-light ml-5">
+           <ul class="navbar-nav">
+               <li class="nav-item">
+                   <img id="logo" src="images/logo.png" alt="microsof">
+               </li>
+               <li class="nav-item active">
+                   <a class="nav-link" href="#">Surface</a>
+               </li>
+               <li class="nav-item dropdown">
+                   <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                       Computers
+                   </a>
+                   <div class="dropdown-menu">
+                       <a class="dropdown-item" href="#">New Surface Go 2</a>
+                       <a class="dropdown-item" href="#">Surface Pro X</a>
+                       <a class="dropdown-item" href="#">Compare Devices</a>
+                   </div>
+               </li>
+               <li class="nav-item dropdown">
+                   <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                       Accessories
+                   </a>
+                   <div class="dropdown-menu">
+                       <a class="dropdown-item" href="#">New Surface Go 2</a>
+                       <a class="dropdown-item" href="#">Surface Pro X</a>
+                       <a class="dropdown-item" href="#">Compare Devices</a>
+                   </div>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="#">For Business</a>
+               </li>
+               <li class="nav-item dropdown">
+                   <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                       Shop now
+                   </a>
+                   <div class="dropdown-menu">
+                       <a class="dropdown-item" href="#">New Surface Go 2</a>
+                       <a class="dropdown-item" href="#">Surface Pro X</a>
+                       <a class="dropdown-item" href="#">Compare Devices</a>
+                   </div>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="#">Support</a>
+               </li>
+               <li class="nav-item">
+                   <ul class="nav justify-content-end right-header-topic">
+                       <li class="nav-item dropdown">
+                           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                               All Microsoft
+                           </a>
+                           <div class="dropdown-menu">
+                               <a class="dropdown-item" href="#">New Surface Go 2</a>
+                               <a class="dropdown-item" href="#">Surface Pro X</a>
+                               <a class="dropdown-item" href="#">Compare Devices</a>
+                           </div>
+                       </li>
+                       <li class="nav-item">
+                           <a class="nav-link" href="#">
+                               Search
+                               <i class="fab fa-searchengin"></i>
+                           </a>
+                       </li>
+                       <li class="nav-item">
+                           <a class="nav-link" href="#">
+                               Cart
+                               <i class="fas fa-cart-arrow-down"></i>
+                           </a>
+                       </li>
+                       <li class="nav-item">
+                           <a class="nav-link" href="#">
+                               Sign in
+                               <i class="fas fa-user-plus"></i>
+                           </a>
+                       </li>
+                   </ul>
+               </li>
+           </ul>
+       </nav>
+       <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+           <ol class="carousel-indicators">
+               <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+               <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+           </ol>
+           <div class="carousel-inner">
+               <div class="carousel-item active">
+                   <img src="images/slide1.jpg" class="d-block w-100" alt="slide1">
+                   <div class="carousel-caption d-none d-md-block text-slide">
+                       <h5>Stay connected to what matters most</h5>
+                       <p>With Surface, you and your loved ones can work, learn, play, and catch up with devices designed to keep people connected.</p>
+                   </div>
+               </div>
+               <div class="carousel-item">
+                   <img src="images/slide2.jpg" class="d-block w-100" alt="slide2">
+                   <div class="carousel-caption d-none d-md-block text-slide">
+                       <h5>Spotify on tap</h5>
+                       <p>Throwbacks on tap. Deep focus on tap. Chill on tap.
+                           For whatever moves you, transport yourself on Android with Surface Earbuds and Spotify</p>
+                   </div>
+               </div>
+           </div>
+           <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+               <span class="sr-only">Previous</span>
+           </a>
+           <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+               <span class="carousel-control-next-icon" aria-hidden="true"></span>
+               <span class="sr-only">Next</span>
+           </a>
+       </div>
+       <div class="container mt-3">
+           <ul class="nav justify-content-md-around">
+               <li class="nav-item">
+                   <svg enable-background="new 0 0 27 21" viewBox="0 0 27 21" xmlns="http://www.w3.org/2000/svg" style="margin-left: 55px"><switch><foreignObject height="1" requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" width="1"/><path d="m26.325 15.745c.103.103.197.237.281.401s.155.338.211.52c.056.183.101.366.134.548s.049.345.049.486c0 .234-.049.459-.148.675-.098.216-.232.408-.401.577s-.361.302-.577.401c-.215.098-.44.147-.674.147h-23.4c-.234 0-.459-.049-.675-.148-.216-.098-.408-.232-.577-.401s-.302-.361-.401-.577-.147-.44-.147-.674c0-.141.016-.302.049-.485s.077-.366.134-.548c.056-.183.127-.356.211-.52s.178-.298.281-.401l2.925-2.926v-11.32h19.8v11.32zm-1.125 1.913c0-.038-.007-.091-.021-.162-.014-.07-.033-.141-.056-.211s-.047-.138-.07-.204-.049-.113-.077-.141l-2.856-2.84h-17.24l-2.855 2.841c-.028.028-.054.075-.077.141s-.047.134-.07.204-.042.141-.056.211c-.015.069-.022.123-.022.161l.042.042h23.316zm-19.8-5.358h9c0-.994.188-1.929.562-2.805s.888-1.641 1.54-2.292c.652-.652 1.416-1.165 2.292-1.54s1.812-.563 2.806-.563v-1.8h-16.2zm16.2-5.4c-.75 0-1.451.141-2.102.422-.652.281-1.223.668-1.716 1.16s-.879 1.066-1.16 1.723-.422 1.354-.422 2.095h5.4z" fill="#0078d4"/></switch></svg>
+                   <a class="nav-link under-svg" href="#">COMPARE DEVICES</a>
+               </li>
+               <li class="nav-item">
+                   <svg enable-background="new 0 0 27 21" viewBox="0 0 27 21" xmlns="http://www.w3.org/2000/svg" style="margin-left: 52px"><switch><foreignObject height="1" requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" width="1"/><path d="m22.844 6c.3 0 .58.059.843.176.261.117.49.278.684.48.196.203.349.442.461.715.113.274.168.567.168.879v6.82c0 .969-.188 1.822-.568 2.561-.378.738-.878 1.358-1.505 1.857-.625.5-1.337.877-2.138 1.131-.802.254-1.625.381-2.47.381-.704 0-1.317-.043-1.838-.129-.519-.086-.982-.211-1.386-.375s-.768-.369-1.088-.615c-.323-.246-.645-.531-.966-.855-.323-.324-.658-.683-1.007-1.078-.347-.394-.745-.826-1.195-1.295-.241-.25-.484-.5-.731-.75s-.49-.504-.729-.762c-.525.25-1.045.5-1.562.75s-1.033.5-1.549.75l-1.292-2.918c-.494.516-.99 1.025-1.488 1.529s-.994 1.014-1.488 1.529v-16.652l10.062 10.5v-8.379c0-.312.057-.605.169-.879.112-.273.265-.511.459-.715.196-.203.423-.363.686-.48.263-.117.544-.176.843-.176.421 0 .766.075 1.039.223.274.149.49.344.651.586s.276.524.343.844c.067.321.11.653.129.996.018.344.022.688.01 1.031-.01.344-.016.661-.016.949.247-.086.488-.129.719-.129.263 0 .519.051.77.152.251.102.474.242.668.422.196-.18.419-.32.668-.422.25-.101.507-.152.769-.152.241 0 .472.041.696.123.225.082.429.198.613.346.184.149.343.324.478.527s.231.426.292.668c.253-.109.52-.164.796-.164zm-14.578 8.027-1.55-3.527h3.19l-6.468-6.75v9.445l1.988-2.039 1.538 3.492zm15.296-5.777c0-.203-.071-.379-.212-.527-.143-.148-.31-.223-.506-.223-.186 0-.333.057-.437.17-.106.113-.186.262-.243.445-.055.184-.09.389-.1.615-.012.227-.012.451 0 .674.01.223.025.432.039.627.016.195.022.352.022.469h-1.438v-2.25c0-.156.012-.361.035-.615.022-.254.02-.502-.006-.744-.027-.242-.094-.451-.202-.627s-.29-.264-.545-.264c-.194 0-.363.075-.504.223-.144.148-.215.324-.215.527v3.75h-1.438v-3.75c0-.203-.071-.379-.212-.527-.143-.148-.31-.223-.506-.223-.194 0-.345.059-.455.176-.108.117-.188.268-.241.451-.051.184-.082.389-.09.615-.006.227-.006.451 0 .674.008.223.02.432.039.627.02.195.029.348.029.457v1.5h-1.438v-3.75-4.5c0-.203-.071-.379-.212-.527-.144-.148-.311-.223-.507-.223-.194 0-.363.075-.504.223-.144.148-.215.324-.215.527v11.285c-.202-.094-.48-.226-.837-.398-.355-.172-.727-.341-1.117-.51-.388-.168-.768-.314-1.133-.439-.368-.125-.664-.188-.889-.188-.118 0-.231.02-.331.059-.102.039-.151.137-.151.293 0 .149.039.28.116.393.08.113.167.221.265.322.163.172.39.412.678.721.29.309.604.65.943 1.025.341.375.694.762 1.056 1.16.363.398.711.77 1.039 1.113.331.344.623.643.882.896.257.254.451.424.578.51.353.234.668.418.95.551.28.133.559.233.837.299.276.067.566.11.87.129.302.02.658.029 1.062.029.635 0 1.268-.089 1.897-.27.629-.18 1.19-.451 1.685-.814s.894-.822 1.203-1.377c.306-.555.459-1.211.459-1.969z" fill="#0078d4"/></switch></svg>
+                   <a class="nav-link under-svg" href="#">HELP ME CHOOSE</a>
+               </li>
+               <li class="nav-item">
+                   <svg enable-background="new 0 0 27 21" viewBox="0 0 27 21" xmlns="http://www.w3.org/2000/svg" style="margin-left: 18px"><switch><foreignObject height="1" requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" width="1"/><path d="m21.312 4.214c.716.312 1.363.711 1.94 1.196.579.484 1.071 1.034 1.478 1.646.407.614.72 1.276.94 1.989.22.714.33 1.455.33 2.224 0 1.066-.204 2.065-.61 2.999-.407.934-.965 1.749-1.672 2.446-.709.697-1.537 1.246-2.485 1.647s-1.963.601-3.045.601c-.846 0-1.671-.13-2.472-.391-.801-.26-1.54-.643-2.215-1.148l-3.126 3.077-9.375-9.231 10.938-10.769h9.375v3.714zm-10.937 14.111 9.375-9.231v-3.786c-.146-.032-.326-.054-.537-.066-.211-.013-.433-.024-.666-.037-.231-.011-.462-.03-.689-.054-.228-.024-.434-.066-.617-.126-.184-.061-.332-.143-.446-.247s-.171-.248-.171-.433c0-.209.077-.389.231-.541.155-.152.339-.228.55-.228.399 0 .792.004 1.178.012s.775.056 1.166.144v-1.694h-7.165l-9.376 9.231zm7.813-.902c.863 0 1.673-.162 2.429-.487.758-.324 1.418-.765 1.984-1.322s1.014-1.208 1.343-1.953c.33-.745.495-1.543.495-2.392 0-.545-.073-1.078-.22-1.599s-.353-1.012-.623-1.472c-.267-.461-.595-.884-.982-1.268s-.821-.713-1.3-.986v3.786l-6.689 6.587c.521.361 1.087.635 1.696.824.61.188 1.232.282 1.867.282z" fill="#0078d5"/></switch></svg>
+                   <a class="nav-link under-svg" href="#">DEALS</a>
+               </li>
+               <li class="nav-item">
+                   <svg enable-background="new 0 0 27 21" viewBox="0 0 27 21" xmlns="http://www.w3.org/2000/svg" style="margin-left: 37px"><switch><foreignObject height="1" requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" width="1"/><path d="m15.727 0c.663 0 1.284.128 1.865.385.58.256 1.085.606 1.516 1.051.431.444.771.966 1.019 1.563.249.599.373 1.239.373 1.923v8.859c0 .663-.083 1.302-.248 1.917-.167.615-.402 1.191-.706 1.728s-.67 1.023-1.094 1.461-.897.813-1.417 1.128c-.521.314-1.079.557-1.675.728-.597.172-1.217.257-1.86.257s-1.263-.085-1.86-.256-1.154-.414-1.675-.728c-.52-.314-.992-.69-1.417-1.128-.424-.438-.789-.924-1.094-1.461s-.541-1.113-.706-1.728c-.166-.616-.248-1.255-.248-1.918v-8.859c0-.684.124-1.324.373-1.923.248-.598.588-1.119 1.019-1.563s.937-.795 1.516-1.051c.581-.257 1.202-.385 1.865-.385zm3.5 4.922c0-.499-.091-.967-.274-1.405-.182-.438-.433-.82-.751-1.148s-.689-.586-1.114-.774c-.424-.188-.878-.282-1.362-.282h-1.591v6.562h-1.273v-6.563h-1.591c-.484 0-.938.094-1.362.282-.423.189-.793.447-1.112.775-.318.328-.569.711-.751 1.148-.182.438-.273.906-.273 1.405v8.859c0 .813.151 1.579.453 2.297.301.718.71 1.343 1.227 1.876s1.124.956 1.82 1.266c.696.312 1.438.467 2.227.467s1.531-.155 2.227-.467c.696-.311 1.303-.733 1.82-1.266s.926-1.159 1.227-1.876c.302-.718.453-1.483.453-2.297z" fill="#0078d5"/></switch></svg>
+                   <a class="nav-link under-svg" href="#">ACCESSORIES</a>
+               </li>
+           </ul>
+       </div>
+       <div class="container mt-3 ">
+           <div class="jumbotron jumbotron-fluid flex-column bg-white jumb">
+               <div class="container">
+                   <img src="images/computer-carousel2.png" alt="" class="float-left">
+                   <h3>Save up to $200 on Surface Laptop 3</h3>
+                   <p>Surpass ordinary with the slim, stylish new Surface Laptop 3.</p>
+                       <a href="" class="float-right buy-now">Buy now</a>
+               </div>
+           </div>
+       </div>
+       <div class="container mt-3 center">
+           <h2>Working remotely with Surface</h2>
+           <p class="mt-3">From home office to kitchen table to living room couch, Surface delivers the power to get it done, hi-res touchscreens and Dolby® Audio™ for music and shows, HD cameras to stay in touch, and the Windows you know.</p>
+           <a href="#">See how ></a>
+       </div>
+
+       <div class="container-fluid mt-5">
+           <div class="row ">
+               <div class="col-6 mr-0 pr-0">
+                   <div class="row-6">
+                       <img src="images/2020-07-12_095811.png" alt="big-1" class="img-fluid">
+                   </div>
+                   <div class="row-6">
+                       <img src="images/big-3.png" alt="big-3" class="img-fluid">
+                   </div>
+               </div>
+               <div class="col-6 ml-0 pl-1">
+                   <div class="row-3">
+                       <img src="images/big-2.png" alt="big-2" class="img-fluid">
+                   </div>
+                   <div class="row-6 pt-1">
+                       <img src="images/big-4.png" alt="big-4" class="img-fluid">
+                   </div>
+                   <div class="row-3 pt-1">
+                       <img src="images/big-5.png" alt="big-5" class="img-fluid">
+                   </div>
+               </div>
+           </div>
+           <div class="row pt-1">
+               <div class="col-12">
+                   <img src="images/big-6.png" alt="big-6" class="img-fluid">
+               </div>
+           </div>
+           <div class="row pt-1">
+               <div class="col-6 mr-0 pr-0"><img src="images/big-7.png" alt="big-7" class="img-fluid"></div>
+               <div class="col-6 ml-0 pl-1"><img src="images/big-8.png" alt="big-8" class="img-fluid"></div>
+           </div>
+           <div class="row mt-1">
+               <div class="col-12 "><img src="images/big-10.png" alt="big-10" class="img-fluid"></div>
+           </div>
+           <div class="row  mt-1">
+               <div class="col-12"><img src="images/big-11.png" alt="big-11" class="img-fluid"></div>
+           </div>
+       </div>
+
+       <div class="container justify-content-between  mt-5">
+           <hr>
+           <ul class="nav justify-content-md-around">
+               <li class="nav-item img-like-svg">
+                   <img src="images/idea.svg" alt="idea" class="img-fluid" style="margin-left:60px">
+                   <a class="nav-link under-svg" href="#" style="">SURFACE SUPPORT</a>
+               </li>
+               <li class="nav-item img-like-svg">
+                   <img src="images/earch.svg" alt="earch" class="img-fluid" style="margin-left:80px">
+                   <a class="nav-link under-svg" href="#">REGISTER YOUR SURFACE</a>
+               </li>
+               <li class="nav-item img-like-svg">
+                   <img src="images/paper.svg" alt="paper" class="img-fluid" style="margin-left:100px">
+                   <a class="nav-link under-svg" href="#">GET THE SURFACE NEWSLETTER</a>
+               </li>
+               <li class="nav-item img-like-svg">
+                   <img src="images/warning.svg" alt="warning" class="img-fluid" style="margin-left:60px">
+                   <a class="nav-link under-svg" href="#">POWER CORD RECALL</a>
+               </li>
+           </ul>
+           <hr>
+       </div>
+
+       <div class="container-fluid bg-dark text-white p-0 p-3 footer-banner">
+           <p><span>*</span> Type Cover, Surface Dial, Microsoft Office, and some software and accessories sold separately. Surface Pen sold separately for Surface Book 3, Surface Pro 7, Surface Laptop 3, Surface Pro X, and Surface Go 2.</p>
+           <p><span>**</span> Tap functionality for Spotify available only on Android phones. Spotify account required.</p>
+       </div>
+
+       <div class="container m-3 pl-5 social" >
+           <span>Follow this page</span>
+           <i class="fab fa-facebook-f fa-2x ml-3"></i>
+           <i class="fab fa-twitter fa-2x ml-3" ></i>
+           <i class="fab fa-instagram fa-2x ml-3"></i>
+           <i class="fab fa-linkedin fa-2x ml-3"></i>
+       </div>
+
+       <div class="container-fluid p-0 bg-light text-dark p-5">
+           <div class="row footer-list">
+               <div class="col-2">
+                   <table>
+                       <tr>
+                           <th>What's new</th>
+                       </tr>
+                       <tr>
+                           <td>Surface Go 2</td>
+                       </tr>
+                       <tr>
+                           <td>Surface Book 3</td>
+                       </tr>
+                       <tr>
+                           <td>Microsoft 365</td>
+                       </tr>
+                       <tr>
+                           <td>Surface Pro X</td>
+                       </tr>
+                       <tr>
+                           <td>Windows 10 apps</td>
+                       </tr>
+                   </table>
+               </div>
+               <div class="col-2">
+                   <table>
+                       <tr>
+                           <th>Microsoft Store</th>
+                       </tr>
+                       <tr>
+                           <td>Account profile</td>
+                       </tr>
+                       <tr>
+                           <td>Download Center</td>
+                       </tr>
+                       <tr>
+                           <td>Microsoft Store support</td>
+                       </tr>
+                       <tr>
+                           <td>Returns</td>
+                       </tr>
+                       <tr>
+                           <td>Order tracking</td>
+                       </tr>
+                       <tr>
+                           <td>Store locations</td>
+                       </tr>
+                       <tr>
+                           <td>Virtual workshops and training</td>
+                       </tr>
+                   </table>
+               </div>
+               <div class="col-2">
+                   <table>
+                       <tr>
+                           <th>Education</th>
+                       </tr>
+                       <tr>
+                           <td>Microsoft in education</td>
+                       </tr>
+                       <tr>
+                           <td>Office for students</td>
+                       </tr>
+                       <tr>
+                           <td>Office 365 for schools</td>
+                       </tr>
+                       <tr>
+                           <td>Deals for students & parents</td>
+                       </tr>
+                       <tr>
+                           <td>Microsoft Azure in education</td>
+                       </tr>
+                   </table>
+               </div>
+               <div class="col-2">
+                   <table>
+                       <tr>
+                           <th>Enterprise</th>
+                       </tr>
+                       <tr>
+                           <td>Azure</td>
+                       </tr>
+                       <tr>
+                           <td>Automotive</td>
+                       </tr>
+                       <tr>
+                           <td>Government</td>
+                       </tr>
+                       <tr>
+                           <td>Healthcare</td>
+                       </tr>
+                       <tr>
+                           <td>Manufacturing</td>
+                       </tr>
+                       <tr>
+                           <td>Financial services</td>
+                       </tr>
+                       <tr>
+                           <td>Retail</td>
+                       </tr>
+                   </table>
+               </div>
+               <div class="col-2">
+                   <table>
+                       <tr>
+                           <th>Developer</th>
+                       </tr>
+                       <tr>
+                           <td>Microsoft Visual Studio</td>
+                       </tr>
+                       <tr>
+                           <td>Windows Dev Center</td>
+                       </tr>
+                       <tr>
+                           <td>Developer Network</td>
+                       </tr>
+                       <tr>
+                           <td>TechNet</td>
+                       </tr>
+                       <tr>
+                           <td>Microsoft developer program</td>
+                       </tr>
+                       <tr>
+                           <td>Channel 9</td>
+                       </tr>
+                       <tr>
+                           <td>Office Dev Center</td>
+                       </tr>
+                       <tr>
+                           <td>Microsoft Garage</td>
+                       </tr>
+                   </table>
+               </div>
+               <div class="col-2">
+                   <table>
+                       <tr>
+                           <th>Careers</th>
+                       </tr>
+                       <tr>
+                           <td>About Microsoft</td>
+                       </tr>
+                       <tr>
+                           <td>Company news</td>
+                       </tr>
+                       <tr>
+                           <td>Privacy at Microsoft</td>
+                       </tr>
+                       <tr>
+                           <td>Investors</td>
+                       </tr>
+                       <tr>
+                           <td>Diversity and inclusion</td>
+                       </tr>
+                       <tr>
+                           <td>Accessibility</td>
+                       </tr>
+                       <tr>
+                           <td>Security</td>
+                       </tr>
+                   </table>
+               </div>
+           </div>
+           <div class="row mt-5">
+               <div class="col-4">
+                   <i class="fas fa-globe-americas"></i>
+                   <span>English (United States)</span>
+               </div>
+               <div class="col-8">
+                   <nav class="nav menu-footer">
+                       <a class="nav-link " href="#">Sitemap</a>
+                       <a class="nav-link " href="#">Contact Microsoft</a>
+                       <a class="nav-link " href="#">Privacy & Cookies</a>
+                       <a class="nav-link " href="#">Terms of use</a>
+                       <a class="nav-link " href="#">Trademarks</a>
+                       <a class="nav-link " href="#">Safety & eco</a>
+                       <a class="nav-link " href="#">About our ads</a>
+                       <a class="nav-link " href="#">© Microsoft 2020</a>
+                   </nav>
+               </div>
+           </div>
+       </div>
+
+
+   </div>
+</body>
+</html>

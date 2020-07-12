@@ -1,0 +1,101 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 100vw;
+    height: auto;
+}
+
+#logo {
+    width: 67%;
+    border-right: 2px solid black;
+    padding-right: 30px;
+    margin-left: 30px;
+}
+
+.right-header-topic {
+    margin-left: 200px;
+    margin-right: 15px;
+}
+
+.text-slide {
+    margin-bottom: 170px;
+    font-weight: 100;
+    font-size: 25px;
+    width: 500px;
+    height: auto;
+    text-align: left;
+    margin-left: -40px;
+}
+
+svg, .img-like-svg img {
+    width: 50px;
+    height: 50px;
+    margin-left: 30px;
+}
+
+.under-svg {
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+}
+
+.buy-now {
+    position: relative;
+    top: -55px;
+    left: -50px;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.jumb {
+    border: 1px solid black;
+}
+
+.center {
+    text-align: center;
+    width: 80%;
+}
+
+.center a {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.center h2 {
+    font-weight: 300;
+}
+
+.footer-banner {
+    font-size: 13px;
+    font-weight: 300;
+    background: black;
+}
+
+.footer-banner p {
+    padding-left: 40px;
+}
+
+.footer-banner span {
+    color: blue;
+}
+
+.footer-list td{
+    font-size: 13px;
+    line-height:2;
+}
+
+.menu-footer a{
+    font-size: 13px;
+    color: black;
+}
+
+
+
+
+
