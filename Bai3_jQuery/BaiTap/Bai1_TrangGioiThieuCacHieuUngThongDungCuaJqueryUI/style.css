@@ -1,0 +1,24 @@
+body {
+    background: #a6a6a6;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+}
+
+.table-config {
+    box-shadow: 10px 10px 20px black;
+    border-radius: 5px;
+    transition: all .9s;
+}
+
+.table-config tbody tr:hover {
+    transform: scale(1.1);
+    background: teal;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.table-config thead {
+    text-align: center;
+    background: #0c5460;
+}
