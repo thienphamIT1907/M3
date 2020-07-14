@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script
+            src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/b2cccbdfee.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <!-- <script src="action.js"></script> -->
+    <script src="action.js"></script>
+
+    <title>List student by AJAX</title>
+</head>
+<body>
+<div class="container-fluid p-0">
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand" href="#">Thien Education</a>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contact</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+    <div class="container-fluid bg-dark text-white p-5 footer-banner text-center">
+        <h1>List student get by AJAX</h1>
+        <button type="button" class="btn btn-danger btn-lg mt-4" id="emptyTableBtn">
+            Show Empty Table
+            <i class="fas fa-exclamation-circle"></i>
+        </button>
+        <button type="button" class="btn btn-info btn-lg mt-4 ml-4" id="fetchingAndShowTableBtn">
+            Fetching Data And Show Table
+            <i class="fas fa-download"></i>
+        </button>
+       
+    </div>
+    <div class="container mt-5 fetching-table">
+        <table class="table table-dark table-config">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Full name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Birthday</th>
+                <th scope="col">Phone number</th>
+                <th scope="col">Address</th>
+            </tr>
+            </thead>
+            <tbody id="list-student"></tbody>
+        </table>
+    </div>
+</div>
+<script id="loop-student-template" type="text/x-handlebars-template">
+    {{#each listStudent}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{fullName}}</td>
+            <td>{{gender}}</td>
+            <td>{{birthDate}}</td>
+            <td>{{phoneNumber}}</td>
+            <td>{{address}}</td>
+        </tr>
+    {{/each}}
+</script>
+</body>
+</html>

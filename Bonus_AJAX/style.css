@@ -1,0 +1,27 @@
+body {
+    background: #a6a6a6;
+    font-family: 'Roboto', sans-serif;
+}
+
+.table-config {
+    box-shadow: 10px 10px 20px black;
+    border-radius: 5px;
+}
+
+.table-config tbody tr {
+    transition: all .3s;
+}
+
+.table-config tbody tr:hover {
+    transform: scale(1.1);
+    background: rgb(116, 187, 187);
+    font-weight: bold;
+    box-shadow: 0 15px 35px black;
+}
+
+.table-config thead tr th {
+    text-align: center;
+    background: #0c5460;
+    margin-bottom : 25px;
+
+}
