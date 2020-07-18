@@ -1,23 +1,22 @@
-function logResult(result) {
-    console.log(result);
+function searching() {
+    document.getElementById('list-result').innerHTML = "";
+    let kw = document.getElementById('keyword').value;
+    fetch(`https://api.github.com/search/users?q=${kw}`)
+        .then(res => {
+        return res.json();
+    })
+        .then(data => {
+        let insertLiTag = document.getElementById('list-result');
+        insertLiTag.innerHTML += `<li><b>Total result: ${data.total_count}</b></li><hr>`;
+        let i;
+        for (i in data.items) {
+            insertLiTag.innerHTML +=
+                `<li>Id: ${data.items[i].id}</li>
+                            <li>Login: ${data.items[i].login}</li>
+                            <li>Url: ${data.items[i].url}</li>
+                            <li>Repositories url: ${data.items[i].repos_url}</li>
+                            <li>Type: ${data.items[i].type}</li>
+                            <hr>`;
+        }
+    });
 }
-function logError(error) {
-    console.log('Looks like there was a problem: \n', error);
-}
-function validateResponse(response) {
-    if (!response.ok) {
-        throw Error(response.statusText);
-    }
-    return response;
-}
-function readResponseAsJSON(response) {
-    return response.json();
-}
-function fetchJSON(pathToResource) {
-    fetch(pathToResource) // 1
-        .then(validateResponse) // 2
-        .then(readResponseAsJSON) // 3
-        .then(logResult) // 4
-        .catch(logError);
-}
-fetchJSON('https://api.github.com/search/users?q=thienphamIT1907');
