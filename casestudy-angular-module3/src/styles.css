@@ -39,3 +39,14 @@ body {
     border-radius: 15px;
     color: teal;
 }
+
+.hover-tk {
+    box-shadow: 5px 5px 13px grey;
+    border-radius: 10px;
+    transition: all .3s;
+}
+
+.hover-tk:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 15px 17px grey;
+}

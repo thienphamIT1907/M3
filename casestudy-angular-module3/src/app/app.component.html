@@ -72,7 +72,7 @@
 
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <a class="navbar-brand" href="#">Furama Resort</a>
+        <a class="navbar-brand" routerLink="/home">Furama Resort</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -112,34 +112,7 @@
         </div>
     </nav>
 
-    <!-- list customer component -->
-    <!-- <app-customer-list></app-customer-list> -->
-
-    <!-- list employee component -->
-    <!-- <app-employee-list></app-employee-list> -->
-
-    <!-- list service component -->
-    <!-- <app-f-service-list></app-f-service-list> -->
-
-    <!-- list contract component -->
-    <app-contract-list></app-contract-list>
-
-    <!-- form create employee -->
-    <app-employee-create></app-employee-create>
-
-    <!-- form create customer -->
-    <app-customer-create></app-customer-create>
-
-    <!-- form create fservice -->
-    <app-f-service-create></app-f-service-create>
-
-    <!-- form create contract -->
-    <app-contract-create></app-contract-create>
-
-     <!-- form create contract detail -->
-     <app-contract-detail-create></app-contract-detail-create>
-
-
+    <router-outlet></router-outlet>
 
     <div class=" fixed-bottom bg-dark custom">
         <a class="btn btn-info float-right" data-toggle="collapse" href="#multiCollapseExample1" role="button"
@@ -150,19 +123,19 @@
             <div class="col-6">
                 <div class="collapse multi-collapse" id="multiCollapseExample1">
                     <h3>Hệ thống</h3>
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" routerLink="/customer-list">
                         <i class="fa fa-link" aria-hidden="true"></i>
                         Danh sách khách hàng
                     </a>
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" routerLink="/fservice-list">
                         <i class="fa fa-link" aria-hidden="true"></i>
                         Danh sách dịch vụ
                     </a>
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" routerLink="/contract-list">
                         <i class="fa fa-link" aria-hidden="true"></i>
                         Danh sách hợp đồng
                     </a>
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" routerLink="contract-detail-list">
                         <i class="fa fa-link" aria-hidden="true"></i>
                         Danh sách hợp đồng chi tiết
                     </a>

@@ -1,3 +1,5 @@
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -13,6 +15,7 @@ import { FServiceCreateComponent } from './components/f-service/f-service-create
 import { ContractDetailListComponent } from './components/contract-detail/contract-detail-list/contract-detail-list.component';
 import { ContractDetailCreateComponent } from './components/contract-detail/contract-detail-create/contract-detail-create.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +29,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     FServiceListComponent,
     FServiceCreateComponent,
     ContractDetailListComponent,
-    ContractDetailCreateComponent
+    ContractDetailCreateComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
