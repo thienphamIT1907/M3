@@ -36,7 +36,7 @@ body {
 .custom a:hover {
     opacity: 1;
     transform: scale(0.98);
-    border-radius: 15px;
+    border-radius: 5px;
     color: teal;
 }
 

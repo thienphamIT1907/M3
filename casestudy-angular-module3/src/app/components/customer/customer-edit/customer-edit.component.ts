@@ -6,56 +6,67 @@ import { validationIdCard } from '../../../validation/validation-id-card';
 import { validationEmail } from '../../../validation/validation-email';
 import { Customer } from './../../../models/customer/Customer.model';
 import { CustomerType } from './../../../models/customer/CustomerType.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-customer-create',
-  templateUrl: './customer-create.component.html',
-  styleUrls: ['./customer-create.component.css']
+  selector: 'app-customer-edit',
+  templateUrl: './customer-edit.component.html',
+  styleUrls: ['./customer-edit.component.css']
 })
-export class CustomerCreateComponent implements OnInit {
+export class CustomerEditComponent implements OnInit {
 
-  customerRegisterForm: FormGroup;
+  customerEditForm: FormGroup;
   customer: Customer;
   customerTypes: CustomerType[];
 
-  constructor(private fb: FormBuilder, private customerService: CustomerService) { }
+  constructor(
+    private fb: FormBuilder,
+    private customerService: CustomerService,
+    private activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+
     this.customerTypes = this.customerService.getAllCustomerType();
 
-    this.customerRegisterForm = this.fb.group({
-      customerId: '',
-      customerCode: ['', [Validators.pattern('^KH-[0-9]{4}$')]],
-      customerTypeId: '',
-      customerName: '',
-      birthday: '',
-      idCard: ['', [validationIdCard]],
-      phoneNumber: ['', [validationPhoneNumber]],
-      email: ['', [validationEmail]],
-      address: '',
-      gender: ''
+    this.activatedRoute.params.subscribe(data => {
+      const id = (+data.id);
+      this.customer = this.customerService.getCustomerById(id);
+      console.log(this.customer);
+    });
+
+    this.customerEditForm = this.fb.group({
+      customerId: this.customer.customerId,
+      customerCode: [this.customer.customerCode, [Validators.pattern('^KH-[0-9]{4}$')]],
+      customerTypeId: this.customer.customerTypeId,
+      customerName: this.customer.customerName,
+      birthday: this.customer.birthday,
+      idCard: [this.customer.idCard, [validationIdCard]],
+      phoneNumber: [this.customer.phoneNumber, [validationPhoneNumber]],
+      email: [this.customer.email, [validationEmail]],
+      address: this.customer.address,
+      gender: this.customer.gender
     });
   }
 
   get getCustomerCode(): AbstractControl {
-    return this.customerRegisterForm.get('customerCode');
+    return this.customerEditForm.get('customerCode');
   }
 
   get getPhoneNumber(): AbstractControl {
-    return this.customerRegisterForm.get('phoneNumber');
+    return this.customerEditForm.get('phoneNumber');
   }
 
   get getEmail(): AbstractControl {
-    return this.customerRegisterForm.get('email');
+    return this.customerEditForm.get('email');
   }
 
   get getIdCard(): AbstractControl {
-    return this.customerRegisterForm.get('idCard');
+    return this.customerEditForm.get('idCard');
   }
 
   onSubmit(): void {
-    this.customer = this.customerRegisterForm.value;
-    this.customerService.createCustomer(this.customer);
+    console.log(this.customerEditForm.value);
   }
 
   validationCustomerCode(): boolean {
@@ -73,4 +84,5 @@ export class CustomerCreateComponent implements OnInit {
   validationEmail(): boolean {
     return this.getEmail.hasError('wrongEmailPattern') && this.getEmail.touched;
   }
+
 }

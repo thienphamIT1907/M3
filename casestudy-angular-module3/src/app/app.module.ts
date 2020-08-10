@@ -16,6 +16,7 @@ import { ContractDetailListComponent } from './components/contract-detail/contra
 import { ContractDetailCreateComponent } from './components/contract-detail/contract-detail-create/contract-detail-create.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
+import { CustomerEditComponent } from './components/customer/customer-edit/customer-edit.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { HomeComponent } from './components/home/home.component';
     FServiceCreateComponent,
     ContractDetailListComponent,
     ContractDetailCreateComponent,
-    HomeComponent
+    HomeComponent,
+    CustomerEditComponent
   ],
   imports: [
     BrowserModule,

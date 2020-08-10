@@ -1,5 +1,6 @@
+import { CustomerService } from './../../../services/customer.service';
 import { Component, OnInit } from '@angular/core';
-import { customerArr } from '../../../models/customer/Customer.model';
+import { Customer } from './../../../models/customer/Customer.model';
 
 @Component({
   selector: 'app-customer-list',
@@ -8,11 +9,13 @@ import { customerArr } from '../../../models/customer/Customer.model';
 })
 export class CustomerListComponent implements OnInit {
 
-  customerArr = customerArr;
+  customers: Customer[];
+  test: string;
 
-  constructor() { }
+  constructor(private customerSerivce: CustomerService) { }
 
   ngOnInit(): void {
+    this.customers = this.customerSerivce.getAllCustomer();
+    this.test = this.customerSerivce.getCustomerTypeById(1).customerTypeName;
   }
-
 }
