@@ -28,7 +28,7 @@
               <td> {{ c.phoneNumber }} </td>
               <td> {{ c.email }} </td>
               <td> {{ c.address }} </td>
-              <td> {{ c.customerTypeId }} </td>
+              <td> {{ c.customerTypeId.customerTypeName }} </td>
               <td>
                 <a class="btn btn-info" [routerLink]="['/customer-edit/', c.customerId]">
                   <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
