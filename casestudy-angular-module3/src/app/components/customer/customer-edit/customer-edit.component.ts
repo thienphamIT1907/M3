@@ -1,52 +1,84 @@
+import { Subscription } from 'rxjs';
 import { CustomerService } from './../../../services/customer.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { validationPhoneNumber } from '../../../validation/validation-phone-number';
 import { validationIdCard } from '../../../validation/validation-id-card';
 import { validationEmail } from '../../../validation/validation-email';
 import { Customer } from './../../../models/customer/Customer.model';
-import { CustomerType } from './../../../models/customer/CustomerType.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-edit',
   templateUrl: './customer-edit.component.html',
   styleUrls: ['./customer-edit.component.css']
 })
-export class CustomerEditComponent implements OnInit {
+export class CustomerEditComponent implements OnInit, OnDestroy {
 
+  subscription: Subscription;
   customerEditForm: FormGroup;
-  customer: Customer;
-  customerTypes: CustomerType[];
+  customerToEdit: Customer;
+  idHook: number;
 
   constructor(
     private fb: FormBuilder,
     private customerService: CustomerService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
-
-    this.customerTypes = this.customerService.getAllCustomerType();
-
-    this.activatedRoute.params.subscribe(data => {
-      const id = (+data.id);
-      this.customer = this.customerService.getCustomerById(id);
-      console.log(this.customer);
+    this.activatedRoute.params.subscribe(customer => {
+      const id = (+customer.id);
+      this.subscription = this.customerService.getCustomerById(id).subscribe({
+        next: data => {
+          this.customerToEdit = data;
+          this.idHook = this.customerToEdit.id;
+          this.customerEditForm.patchValue({
+            customerCode: this.customerToEdit.customerCode,
+            customerType: this.customerToEdit.customerType,
+            customerName: this.customerToEdit.customerName,
+            birthday: this.customerToEdit.birthday,
+            idCard: this.customerToEdit.idCard,
+            phoneNumber: this.customerToEdit.phoneNumber,
+            email: this.customerToEdit.email,
+            address: this.customerToEdit.address,
+            gender: this.customerToEdit.gender
+          });
+        },
+        error: err => console.log(err)
+      });
     });
 
     this.customerEditForm = this.fb.group({
-      customerId: this.customer.customerId,
-      customerCode: [this.customer.customerCode, [Validators.pattern('^KH-[0-9]{4}$')]],
-      customerTypeId: this.customer.customerTypeId,
-      customerName: this.customer.customerName,
-      birthday: this.customer.birthday,
-      idCard: [this.customer.idCard, [validationIdCard]],
-      phoneNumber: [this.customer.phoneNumber, [validationPhoneNumber]],
-      email: [this.customer.email, [validationEmail]],
-      address: this.customer.address,
-      gender: this.customer.gender
+      customerCode: ['', [Validators.pattern('^KH-[0-9]{4}$')]],
+      customerType: '',
+      customerName: '',
+      birthday: '',
+      idCard: ['', [validationIdCard]],
+      phoneNumber: ['', [validationPhoneNumber]],
+      email: ['', [validationEmail]],
+      address: '',
+      gender: ''
     });
+  }
+
+  onSubmit(): void {
+    this.customerToEdit = Object.assign({}, this.customerEditForm.value);
+    this.customerToEdit.id = this.idHook;
+
+    this.subscription = this.customerService.patchCustomer(this.customerToEdit).subscribe({
+      next: () => {
+        this.router.navigateByUrl('/customer-list');
+      },
+      error: err => console.log(err)
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
   get getCustomerCode(): AbstractControl {
@@ -65,10 +97,6 @@ export class CustomerEditComponent implements OnInit {
     return this.customerEditForm.get('idCard');
   }
 
-  onSubmit(): void {
-    console.log(this.customerEditForm.value);
-  }
-
   validationCustomerCode(): boolean {
     return this.getCustomerCode.hasError('pattern') && this.getCustomerCode.touched;
   }
@@ -84,5 +112,4 @@ export class CustomerEditComponent implements OnInit {
   validationEmail(): boolean {
     return this.getEmail.hasError('wrongEmailPattern') && this.getEmail.touched;
   }
-
 }

@@ -1,6 +1,6 @@
 export interface ContractDetail {
-    contractDetailId: number;
-    contractId: number;
-    fServiceBonusId: number;
+    id: number;
+    contractName: string;
+    fServiceBonusName: string;
     amount: number;
 }

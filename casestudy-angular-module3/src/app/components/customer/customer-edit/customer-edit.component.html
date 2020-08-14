@@ -1,8 +1,8 @@
-<div class="container footer">
+<div class="container-fluid footer">
   <div class="row w-100">
     <div class="col-lg-12 p-0">
       <div class="container mt-5">
-        <h2>Form chỉnh sửa khách hàng</h2>
+        <h2>Form chỉnh sửa khách hàng</h2> 
         <form [formGroup]="customerEditForm" (ngSubmit)="onSubmit()">
           <div class="row">
             <div class="col">
@@ -23,11 +23,13 @@
             <div class="col">
               <div class="form-group">
                 <label for="">Loại khách</label>
-                <select class="form-control" id="exampleFormControlSelect1" formControlName="customerTypeId">
+                <select class="form-control" id="exampleFormControlSelect1" formControlName="customerType">
                   <option value="" selected disabled> -- Chọn loại khách hàng -- </option>
-                  <option *ngFor="let type of customerTypes" [value]="type.customerTypeId">
-                    {{ type.customerTypeName }}
-                  </option>
+                  <option value="Diamond">Diamond</option>
+                  <option value="Platinum">Platinum</option>
+                  <option value="Gold">Gold</option>
+                  <option value="Silver">Silver</option>
+                  <option value="Member">Member</option>
                 </select>
               </div>
             </div>
@@ -83,7 +85,7 @@
                 <a type="button" class="btn btn-lg btn-outline float-right" routerLink="/customer-list">Huỷ bỏ</a>
               </div>
               <div>
-                <input type="submit" value="Lưu thay đổi" class="btn btn-lg btn-danger float-right mr-3"/>
+                <button type="submit" class="btn btn-lg btn-danger float-right mr-3" [disabled]="customerEditForm.invalid">Lưu thay đổi</button>
               </div>
             </div>
           </div>

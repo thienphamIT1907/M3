@@ -1,8 +1,7 @@
 import { AppRoutingModule } from './app-routing.module';
-import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { CustomerListComponent } from './components/customer/customer-list/customer-list.component';
 import { CustomerCreateComponent } from './components/customer/customer-create/customer-create.component';
@@ -17,6 +16,10 @@ import { ContractDetailCreateComponent } from './components/contract-detail/cont
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { CustomerEditComponent } from './components/customer/customer-edit/customer-edit.component';
+import { EmployeeEditComponent } from './components/employee/employee-edit/employee-edit.component';
+import { FServiceEditComponent } from './components/f-service/f-service-edit/f-service-edit.component';
+import { ContractEditComponent } from './components/contract/contract-edit/contract-edit.component';
+import { ContractDetailEditComponent } from './components/contract-detail/contract-detail-edit/contract-detail-edit.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +35,17 @@ import { CustomerEditComponent } from './components/customer/customer-edit/custo
     ContractDetailListComponent,
     ContractDetailCreateComponent,
     HomeComponent,
-    CustomerEditComponent
+    CustomerEditComponent,
+    EmployeeEditComponent,
+    FServiceEditComponent,
+    ContractEditComponent,
+    ContractDetailEditComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

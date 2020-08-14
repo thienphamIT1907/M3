@@ -1,38 +1,35 @@
-import { customerArr } from './../models/customer/Customer.model';
 import { Injectable } from '@angular/core';
 import { Customer } from './../models/customer/Customer.model';
-import { customerTypeArr } from './../models/customer/CustomerType.model';
-import { CustomerType } from './../models/customer/CustomerType.model';
-import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
 
-  customers = customerArr;
-  customerTypes = customerTypeArr;
+  private API_URL = 'http://localhost:3000/customerList';
 
-  constructor(private router: Router) { }
+  constructor(private http: HttpClient) { }
 
-  getAllCustomer(): Customer[] {
-    return this.customers;
+  getAllCustomer(): Observable<Customer[]> {
+    return this.http.get<Customer[]>(this.API_URL);
   }
 
-  getCustomerById(id: number): Customer {
-    return this.customers.find(cus => cus.customerId === id);
+  getCustomerById(id: number): Observable<Customer> {
+    return this.http.get<Customer>(`${this.API_URL}/${id}`);
   }
 
-  createCustomer(customer: Customer): void {
-    this.customers.push(customer);
-    this.router.navigate(['customer-list']);
+  postCustomer(customer: Customer): Observable<void> {
+    return this.http.post<void>(this.API_URL, customer);
   }
 
-  getAllCustomerType(): CustomerType[] {
-    return this.customerTypes;
+  patchCustomer(customer: Customer): Observable<Customer> {
+    return this.http.patch<Customer>(`${this.API_URL}/${customer.id}`, customer);
   }
 
-  getCustomerTypeById(id: number): CustomerType {
-    return this.customerTypes.find(type => type.customerTypeId === id);
+  deleteCustomer(id: number): Observable<Customer> {
+    return this.http.delete<Customer>(`${this.API_URL}/${id}`);
   }
+
 }

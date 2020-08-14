@@ -1,32 +1,30 @@
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { CustomerService } from './../../../services/customer.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { validationPhoneNumber } from '../../../validation/validation-phone-number';
 import { validationIdCard } from '../../../validation/validation-id-card';
 import { validationEmail } from '../../../validation/validation-email';
 import { Customer } from './../../../models/customer/Customer.model';
-import { CustomerType } from './../../../models/customer/CustomerType.model';
 
 @Component({
   selector: 'app-customer-create',
   templateUrl: './customer-create.component.html',
   styleUrls: ['./customer-create.component.css']
 })
-export class CustomerCreateComponent implements OnInit {
+export class CustomerCreateComponent implements OnInit, OnDestroy {
 
   customerRegisterForm: FormGroup;
-  customer: Customer;
-  customerTypes: CustomerType[];
+  customerNew: Customer;
+  subscription: Subscription;
 
-  constructor(private fb: FormBuilder, private customerService: CustomerService) { }
+  constructor(private fb: FormBuilder, private customerService: CustomerService, private router: Router) { }
 
   ngOnInit(): void {
-    this.customerTypes = this.customerService.getAllCustomerType();
-
     this.customerRegisterForm = this.fb.group({
-      customerId: '',
       customerCode: ['', [Validators.pattern('^KH-[0-9]{4}$')]],
-      customerTypeId: '',
+      customerType: '',
       customerName: '',
       birthday: '',
       idCard: ['', [validationIdCard]],
@@ -36,6 +34,16 @@ export class CustomerCreateComponent implements OnInit {
       gender: ''
     });
   }
+
+  addNewCustomer(): void {
+    this.customerNew = Object.assign({}, this.customerRegisterForm.value);
+    this.subscription = this.customerService.postCustomer(this.customerNew).subscribe({
+      next: () => this.customerService.getAllCustomer().subscribe(),
+      error: err => console.log(err),
+      complete: () => this.router.navigateByUrl('customer-list')
+    });
+  }
+
 
   get getCustomerCode(): AbstractControl {
     return this.customerRegisterForm.get('customerCode');
@@ -53,11 +61,6 @@ export class CustomerCreateComponent implements OnInit {
     return this.customerRegisterForm.get('idCard');
   }
 
-  onSubmit(): void {
-    this.customer = this.customerRegisterForm.value;
-    this.customerService.createCustomer(this.customer);
-  }
-
   validationCustomerCode(): boolean {
     return this.getCustomerCode.hasError('pattern') && this.getCustomerCode.touched;
   }
@@ -72,5 +75,11 @@ export class CustomerCreateComponent implements OnInit {
 
   validationEmail(): boolean {
     return this.getEmail.hasError('wrongEmailPattern') && this.getEmail.touched;
+  }
+
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 }

@@ -1,9 +1,13 @@
+import { Subscription } from 'rxjs';
+import { EmployeeService } from './../../../services/employee.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { validationPhoneNumber } from '../../../validation/validation-phone-number';
 import { validationIdCard } from '../../../validation/validation-id-card';
 import { validationEmail } from '../../../validation/validation-email';
 import { validationPositiveNumber } from 'src/app/validation/validation-positive-number';
+import { Router } from '@angular/router';
+import { Employee } from 'src/app/models/employee/Employee.model';
 
 @Component({
   selector: 'app-employee-create',
@@ -12,20 +16,24 @@ import { validationPositiveNumber } from 'src/app/validation/validation-positive
 })
 export class EmployeeCreateComponent implements OnInit {
 
+  subscription: Subscription;
   employeeCreateForm: FormGroup;
+  employeeNew: Employee;
 
-  isShow = false;
-
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private employeeService: EmployeeService
+  ) { }
 
   ngOnInit(): void {
     this.employeeCreateForm = this.fb.group({
       employeeId: '',
       employeeCode: ['', [Validators.pattern('^NV-[0-9]{4}$')]],
       employeeName: ['', [Validators.required]],
-      employeeRoleId: '',
-      employeeLevelId: '',
-      employeeDepartmentId: '',
+      employeeRole: '',
+      employeeLevel: '',
+      employeeDepartment: '',
       birthday: '',
       idCard: ['', [validationIdCard]],
       salary: ['', [validationPositiveNumber]],
@@ -37,7 +45,12 @@ export class EmployeeCreateComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.employeeCreateForm);
+    this.employeeNew = Object.assign({}, this.employeeCreateForm.value);
+    this.subscription = this.employeeService.postEmployee(this.employeeNew).subscribe({
+      next: () => this.employeeService.getAllEmployee().subscribe(),
+      error: err => console.log(err),
+      complete: () => this.router.navigateByUrl('employee-list')
+    });
   }
 
   validationNameAndCheckTouched(): boolean {
@@ -50,17 +63,17 @@ export class EmployeeCreateComponent implements OnInit {
 
   validationPhoneNumber(): boolean {
     return this.employeeCreateForm.get('phoneNumber').hasError('wrongPhoneNumberPattern') &&
-            this.employeeCreateForm.get('phoneNumber').touched;
+      this.employeeCreateForm.get('phoneNumber').touched;
   }
 
   validationIdCard(): boolean {
     return this.employeeCreateForm.get('idCard').hasError('wrongIdCardPattern') &&
-            this.employeeCreateForm.get('idCard').touched;
+      this.employeeCreateForm.get('idCard').touched;
   }
 
   validationEmail(): boolean {
     return this.employeeCreateForm.get('email').hasError('wrongEmailPattern') &&
-            this.employeeCreateForm.get('email').touched;
+      this.employeeCreateForm.get('email').touched;
   }
 
   validationPostitiveNumber(): boolean {
