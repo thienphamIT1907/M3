@@ -131,8 +131,23 @@
     },
     {
       "id": 3,
-      "employeeCode": "NV-001",
+      "employeeCode": "NV-0011",
       "employeeName": "Nhi",
+      "employeeRole": "Tổng giám đốc",
+      "employeeLevel": "Đại học",
+      "employeeDepartment": "Quản lý",
+      "birthday": "1989-07-20",
+      "idCard": "123123123",
+      "salary": "123333",
+      "phoneNumber": "0908886886",
+      "email": "nhi@yahoo.com",
+      "address": "Ha NOi",
+      "gender": "female"
+    },
+    {
+      "id": 4,
+      "employeeCode": "NV-001",
+      "employeeName": "Thuy",
       "employeeRole": "Tổng giám đốc",
       "employeeLevel": "Đại học",
       "employeeDepartment": "Quản lý",
@@ -158,7 +173,38 @@
       "email": "nhi@yahoo.com",
       "address": "Nam Dinh",
       "gender": "female"
+    },
+    {
+      "id": 6,
+      "employeeCode": "NV-001",
+      "employeeName": "Thuy",
+      "employeeRole": "Tổng giám đốc",
+      "employeeLevel": "Đại học",
+      "employeeDepartment": "Quản lý",
+      "birthday": "1989-07-20",
+      "idCard": "09398588178",
+      "salary": "5.000.000",
+      "phoneNumber": "0948886886",
+      "email": "nhi@yahoo.com",
+      "address": "Nam Dinh",
+      "gender": "female"
+    },
+    {
+      "id": 7,
+      "employeeCode": "NV-001",
+      "employeeName": "Thuy",
+      "employeeRole": "Tổng giám đốc",
+      "employeeLevel": "Đại học",
+      "employeeDepartment": "Quản lý",
+      "birthday": "1989-07-20",
+      "idCard": "09398588178",
+      "salary": "5.000.000",
+      "phoneNumber": "0948886886",
+      "email": "nhi@yahoo.com",
+      "address": "Nam Dinh",
+      "gender": "female"
     }
+    
   ],
   "fServiceList": [
     {

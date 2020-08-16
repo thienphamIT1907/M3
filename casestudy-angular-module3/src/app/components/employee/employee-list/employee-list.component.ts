@@ -14,6 +14,9 @@ export class EmployeeListComponent implements OnInit, OnDestroy {
   employees: Employee[];
   subscription: Subscription;
 
+  term: string;
+  p = 1;
+
   constructor(private employeeService: EmployeeService, private router: Router) { }
 
   ngOnInit(): void {

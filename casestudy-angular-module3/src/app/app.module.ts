@@ -21,6 +21,10 @@ import { FServiceEditComponent } from './components/f-service/f-service-edit/f-s
 import { ContractEditComponent } from './components/contract/contract-edit/contract-edit.component';
 import { ContractDetailEditComponent } from './components/contract-detail/contract-detail-edit/contract-detail-edit.component';
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +50,9 @@ import { ContractDetailEditComponent } from './components/contract-detail/contra
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
+    Ng2SearchPipeModule,
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
