@@ -1,0 +1,97 @@
+<div class="container mt-3">
+  <h2>Form Create</h2>
+  <form [formGroup]="editStudentForm" (ngSubmit)="onSaveEditStudent()">
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Tên sinh viên</label>
+          <input type="text" class="form-control" placeholder="" formControlName="ten_sinh_vien">
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="valid('ten_sinh_vien', 'required')">
+          Không được để trống!
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="valid('ten_sinh_vien', 'pattern')">
+          Không được chứa kí tự đặc biệt !
+        </div>
+      </div>
+      <div class="col">
+        <label for="">Mã sinh viên</label>
+        <input type="text" class="form-control" placeholder="" formControlName="id" disabled>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col">
+        <label for="">Tên nhóm</label>
+        <select class="form-control" id="exampleFormControlSelect1" formControlName="ten_nhom">
+          <option value="nhóm 1" selected>Nhóm 1</option>
+          <option value="nhóm 2">Nhóm 2</option>
+          <option value="nhóm 3">Nhóm 3</option>
+        </select>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <div class="form-group">
+          <label for="">Tên đề tài</label>
+          <input type="text" class="form-control" placeholder="" formControlName="ten_de_tai">
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="valid('ten_de_tai', 'required')">
+          Không được để trống!
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <div class="form-group">
+          <label for="">GV hướng dẫn</label>
+          <select class="form-control" id="exampleFormControlSelect1" formControlName="giao_vien_huong_dan">
+            <option value="Trần Hoàng Nam" selected>Trần Hoàng Nam</option>
+            <option value="Doãn Bá Hùng">Doãn Bá Hùng</option>
+            <option value="Hoàng Thanh Sơn">Hoàng Thanh Sơn</option>
+            <option value="Đoàn Thanh Diệu Phúc">Đoàn Thanh Diệu Phúc</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col">
+        <div class="form-group">
+          <label for="">Email</label>
+          <input type="text" class="form-control" placeholder="" formControlName="email">
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="valid('email', 'required')">
+          Không được để trống!
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="valid('email', 'pattern')">
+          Email phải đúng định dạng!
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col">
+        <div class="form-group">
+          <label for="">Số điện thoại</label>
+          <input type="text" class="form-control" placeholder="" formControlName="so_dien_thoai">
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="valid('so_dien_thoai', 'required')">
+          Không được để trống!
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="valid('so_dien_thoai', 'pattern')">
+          SDT từ 10 đến 12 số!
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <div><input type="button" value="Huỷ bỏ" class="btn btn-lg btn-outline float-right" routerLink="/student-list">
+        </div>
+        <div><button type="submit" class="btn btn-lg btn-danger float-right mr-3"
+            [disabled]="editStudentForm.invalid">Sửa</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

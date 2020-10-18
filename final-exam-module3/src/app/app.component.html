@@ -1,0 +1,57 @@
+<div class="container-fluid p-0" style="height: 100vh">
+    <!--  Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark " style="height: 10%;">
+      <a class="navbar-brand" href="#">Student Management</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  ​
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Giới thiệu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Liên Hệ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Hệ đào tạo</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Tuyển dụng
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Sinh viên</a>
+              <a class="dropdown-item" href="#">Giảng viên</a>
+              <a class="dropdown-item" href="#">Giáo vụ</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!--  Content-->
+    <div class="row px0 m-0" style="height: 90%">
+      <div class="col-2 p-0 m-0 h-100 bg-light">
+        <div class="list-group rounded-0 ">
+          <button type="button" class="list-group-item list-group-item-action bg-info" routerLink=''>
+            <span class="spinner-grow bg-light spinner-grow-sm"></span>
+            Trang chủ
+          </button>
+          <button type="button" class="list-group-item list-group-item-action" routerLink="/student-list">Quản lý sinh viên</button>
+          <button type="button" class="list-group-item list-group-item-action" routerLink="">Chương trình đào tạo</button>
+          <button type="button" class="list-group-item list-group-item-action" routerLink="">Hệ thống học tập</button>
+          <button type="button" class="list-group-item list-group-item-action" routerLink="">Diễn đàn trực tuyến</button>
+          <button type="button" class="list-group-item list-group-item-action" routerLink="">Kế hoạch tốt nghiệp</button>
+          <hr>
+          <div class="progress w-75 ml-2">
+            <div class="progress-bar bg-info progress-bar-striped" style="width:30%">30%</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-10 pl-5 mt-3 mb-3">
+        <router-outlet></router-outlet>
+      </div>
+    </div>

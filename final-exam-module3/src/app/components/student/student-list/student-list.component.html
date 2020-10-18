@@ -1,0 +1,52 @@
+<h1>Danh sách sinh viên</h1>
+<div class="row">
+  <div class="col-2">
+    <button class="btn btn-info mt-3 mb-3" routerLink="/person-create">Thêm mới sinh viên</button>
+  </div>
+  <div class="col-6 d-flex h-25 mt-3">
+    <input class="form-control mr-sm-2" 
+      type="search" 
+      placeholder="Tìm kiếm" 
+      aria-label="Search">
+    <button class="btn btn-success my-2 my-sm-0" type="submit">
+      <i class="fa fa-search" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>STT</th>
+      <th>Mã SV</th>
+      <th>Tên SV</th>
+      <th>Tên nhóm</th>
+      <th>Tên đề tài</th>
+      <th>GVHD</th>
+      <th>Email</th>
+      <th>SDT</th>
+      <th colspan="2">Chức năng</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let s of students; index as i">
+      <td>{{ i + 1 }}</td>
+      <td>{{ s.id }}</td>
+      <td>{{ s.ten_sinh_vien }}</td>
+      <td>{{ s.ten_nhom }}</td>
+      <td>{{ s.ten_de_tai }}</td>
+      <td>{{ s.giao_vien_huong_dan }}</td>
+      <td>{{ s.email }}</td>
+      <td>{{ s.so_dien_thoai }}</td>
+      <td>
+        <button class="btn btn-primary" [routerLink]="['/student-edit/', s.id]">
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sửa
+        </button>
+      </td>
+      <td>
+        <button class="btn btn-danger" (click)="confirmDelete(s.id)">
+          <i class="fa fa-trash" aria-hidden="true"></i> Xoá
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
